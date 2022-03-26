@@ -1,0 +1,172 @@
+:root{
+  --fondo: #93a9a8;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  font-size: 1.6rem;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 11% 55% ;
+  background-color: var(--fondo);
+}
+
+.head {
+  display: grid;
+  place-content: center;
+}
+
+.head p {
+  color: rgb(54, 64, 77);
+  font-size: 1.4;
+  font-weight: bold;
+}
+
+.music-img {
+  display: flex;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type:x proximity;
+  gap: 20px;
+}
+.music-img::-webkit-scrollbar {
+  display: none;
+}
+.music-img div{
+  scroll-snap-align: center;
+  display: grid;
+  place-items: center;
+  margin-top: 30px;
+  min-width: 250px;
+  height: 270px;
+  border-radius: 10px 50px 50px;
+  border-top: 15px solid #3a8a7f;
+  background: var(--fondo);
+  box-shadow:  8px -8px 12px #778988,
+              -8px 8px 12px #afc9c8;
+}
+.img-first{
+  margin-left: calc(50% - 250px/2);
+}
+
+.img-last{
+  margin-right: calc(50% - 250px/2);
+}
+
+.music-img div span{
+  display: inline-block;
+  border-radius: 50px;
+  width: 90%;
+  height: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.music-img div .span1{
+  background-image: url("./img/pexels-aidan-roof-2559803.jpg");
+}
+.music-img div .span2{
+  background-image: url("./img/pexels-florian-köppen-2769589.jpg");
+}
+.music-img div .span3{
+  background-image: url("./img/pexels-paul-theodor-oja-2792156.jpg");
+}
+
+.info-music {
+  padding: 0 30px;
+  text-align: center;
+}
+.info-music h2{
+  font-size: 1.2rem;
+  color: rgb(54, 64, 77);
+}
+
+.info-music .time{
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-music .time p{
+  font-size: .8rem;
+  color: rgb(54, 64, 77);
+}
+
+.info-music .bar-music{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 7px;
+  border-radius: 7px;
+  background-color: #778988;
+}
+
+.info-music .bar-music .bar-progres{
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 60%;
+  height: 7px;
+  border-radius: 7px;
+  background-color: rgb(45, 127, 133);
+  box-shadow: 5px 0 3px #3a498a;
+}
+
+
+.control{ 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 1.5fr repeat(2, 1fr);
+  place-items: center;
+}
+
+.control button{
+  border-radius: 40%;
+  border: none;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(45deg, #9db5b4, #849897);
+  box-shadow:  5px -5px 10px #7b8e8d,
+              -5px 5px 10px #abc4c3;
+}
+
+.control button:active{
+  background: var(--fondo);
+  box-shadow: inset 7px -7px 14px #7b8e8d,
+              inset -7px 7px 14px #abc4c3;  
+  transition: 10ms;
+}
+
+.control button:active i{
+  color: rgb(45, 127, 133);
+  font-size: 1.2rem;
+  transition: 10ms;
+}
+
+.control button i{
+  font-size: 1.5rem;
+  color: rgb(54, 64, 77);
+}
+
+.control .play:active i{
+  color: rgb(45, 127, 133);
+  font-size: 2.7rem;
+}
+
+.control .play{
+  width: 70px;
+  height: 70px;
+}
+.control .play i{
+  margin-left: 10px;
+  font-size: 3rem;
+  color: rgb(54, 64, 77);
+}
